@@ -3,13 +3,13 @@
 
 // file struct create
 typedef struct {
-  char name[255];
+  char *name;
 } s_file_controller;
 
 // create object
 s_file_controller *fcCreate(char *file_name);
 
 // free object
-bool fcFreeMemory(s_file_controller *ctl);
+int fcFreeMemory(s_file_controller *ctl);
 
 #endif
