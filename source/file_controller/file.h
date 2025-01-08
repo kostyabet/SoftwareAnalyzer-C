@@ -7,7 +7,7 @@ typedef struct {
 } s_file_controller;
 
 // create object
-s_file_controller *CreateNewController(char *file_name);
+s_file_controller *fcCreate(char *file_name);
 
 // free object
 bool fcFreeMemory(s_file_controller *ctl);
