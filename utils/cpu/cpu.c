@@ -1,11 +1,13 @@
 #include "cpu.h"
 #include "../../main.h"
 #include "../../source/file_controller/file.h"
+#include <malloc.h>
 #include <stdio.h>
+
 // /proc/cpuinfo
 // get all info about processor
 CPUInfo *getCpuInfo() {
-  CPUInfo *data;
+  CPUInfo *data = malloc(sizeof(CPUInfo));
   s_file_controller *ctl = fcCreate(CPU_FILE_PATH, "r");
   // read data from file
   fcFreeMemory(ctl);

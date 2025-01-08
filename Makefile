@@ -4,7 +4,8 @@ CFLAGS = -Wall -Wextra -g
 
 # Определяем исходные файлы и целевой исполняемый файл
 SRCS = main.c \
-       utils/cpu/cpu.c
+       utils/cpu/cpu.c \
+			 source/file_controller/file.c \
 
 OBJS = $(SRCS:.c=.o)
 TARGET = my_program
