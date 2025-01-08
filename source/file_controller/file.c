@@ -25,7 +25,6 @@ s_file_controller *fcCreate(char *name, char *mode) {
 }
 
 int fcFreeMemory(s_file_controller *ctl) {
-  free(ctl->name);
   fclose(ctl->descriptor);
   return 1;
 }

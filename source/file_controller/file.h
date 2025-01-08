@@ -16,4 +16,7 @@ s_file_controller *fcCreate(char *name, char *mode);
 // free object
 int fcFreeMemory(s_file_controller *ctl);
 
+// read data from file
+
+// write data in file
 #endif

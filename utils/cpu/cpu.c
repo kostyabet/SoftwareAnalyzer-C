@@ -8,7 +8,7 @@
 // get all info about processor
 CPUInfo *getCpuInfo() {
   CPUInfo *data = malloc(sizeof(CPUInfo));
-  s_file_controller *ctl = fcCreate(CPU_FILE_PATH, "r");
+  s_file_controller *ctl = fcCreate(CPU_FILE_PATH, FILE_READ);
   // read data from file
   fcFreeMemory(ctl);
   return data;
