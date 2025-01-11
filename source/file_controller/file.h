@@ -3,6 +3,10 @@
 
 #include <stdio.h>
 
+// for reading and writing handlers
+typedef void (*fcReadHandler)(const char *buffer);
+typedef void (*fcWriteHandler)();
+
 // file struct create
 typedef struct {
   char *name;
@@ -17,6 +21,8 @@ s_file_controller *fcCreate(char *name, char *mode);
 int fcFreeMemory(s_file_controller *ctl);
 
 // read data from file
+void fcRead(s_file_controller *ctl, fcReadHandler handler);
 
 // write data in file
+void fcWrite(s_file_controller *ctl, fcWriteHandler handler);
 #endif
