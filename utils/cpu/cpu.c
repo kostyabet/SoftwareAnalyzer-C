@@ -4,8 +4,9 @@
 #include <malloc.h>
 #include <stdio.h>
 
-// /proc/cpuinfo
-// get all info about processor
+// private
+
+// public
 CPUInfo *getCpuInfo() {
   CPUInfo *data = malloc(sizeof(CPUInfo));
   s_file_controller *ctl = fcCreate(CPU_FILE_PATH, FILE_READ);
