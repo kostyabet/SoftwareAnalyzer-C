@@ -11,8 +11,8 @@ FILE *fcOpenDesctiptor(char *name, char *mode) {
 }
 
 // public functions
-s_file_controller *fcCreate(char *name, char *mode) {
-  s_file_controller *ctl = malloc(sizeof(s_file_controller));
+s_filectl *fcCreate(char *name, char *mode) {
+  s_filectl *ctl = malloc(sizeof(s_filectl));
   if (ctl == NULL)
     return NULL;
 
@@ -24,7 +24,15 @@ s_file_controller *fcCreate(char *name, char *mode) {
   return ctl;
 }
 
-int fcFreeMemory(s_file_controller *ctl) {
+int fcFreeMemory(s_filectl *ctl) {
   fclose(ctl->descriptor);
   return 1;
+}
+
+void fcRead(s_filectl *ctl, fcReadHandler handler, void *context) {
+  bool isEnd = false;
+  const char *buffer;
+  do {
+    handler(buffer, context);
+  } while (isEnd);
 }
